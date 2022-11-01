@@ -1,0 +1,61 @@
+@model IEnumerable<ProjetoMVC.Models.Usuarios>
+
+@{
+    ViewData["title"] = "Lista de Usuários";
+}
+
+<h2>Usuários</h2>
+
+<p>
+    <a asp-action="Criar">Novo Usuario</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model=> model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model=> model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model=> model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model=> model.Telefone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model=> model.Senha)
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Telefone)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Senha)
+                </td>
+                <td>
+                    <a asp-action="Editar" asp-route-id="@item.Id">Editar</a> |
+                    <a asp-action="Deletar" asp-route-id="@item.Id">Deletar</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>    

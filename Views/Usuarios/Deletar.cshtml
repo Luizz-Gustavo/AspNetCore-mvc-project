@@ -1,0 +1,40 @@
+@model ProjetoMVC.Models.Usuarios
+
+@{
+    ViewData["title"] = "Excluir Usuário";
+}
+
+<h1 style="color: red;">Deseja excluir esse usuário?</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Nome)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Nome)
+        </dt>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Email)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Email)
+        </dt>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Telefone)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Telefone)
+        </dt>
+    </dl>
+</div>
+
+<form asp-action="Deletar">
+    <input type="submit" value="Deletar" class="btn btn-danger">
+</form>
+
+<br>
+
+<a asp-action="Index">Voltar</a>
