@@ -91,12 +91,11 @@ namespace ProjetoMVC.Controllers
             {
                 throw new ArgumentException("Telefone", "O telefone deve conter apenas dígitos");
             }
-
-            // to fix later
-            // if (usuario.Senha != usuario.ConfirmarSenha)
-            // {
-            //     throw new ArgumentException("Senhas", "As senhas não são iguais, verifique se digitou corretamente");
-            // }
+            
+            if (usuario.Senha != usuario.ConfirmarSenha)
+            {
+                throw new ArgumentException("Senhas", "As senhas não são iguais, verifique se digitou corretamente");
+            }
 
             usuarioBanco.Nome = usuario.Nome;
             usuarioBanco.Email = usuario.Email;
