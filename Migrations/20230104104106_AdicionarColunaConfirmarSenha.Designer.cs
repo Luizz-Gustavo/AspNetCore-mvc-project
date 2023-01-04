@@ -11,8 +11,8 @@ using ProjetoMVC.context;
 namespace ProjetoMVC.Migrations
 {
     [DbContext(typeof(UsuariosContext))]
-    [Migration("20221031225941_Usuarios")]
-    partial class Usuarios
+    [Migration("20230104104106_AdicionarColunaConfirmarSenha")]
+    partial class AdicionarColunaConfirmarSenha
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,6 +30,9 @@ namespace ProjetoMVC.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("ConfirmarSenha")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
